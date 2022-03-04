@@ -156,6 +156,9 @@ function trackUnpublished(publication) {
 function participantConnected(participant, container) {
   let participantContainer = document.createElement('div');
   participantContainer.className = 'participant-container';
+  participantContainer.onclick=function(){
+  	participantContainer.classList.toggle("fullscreen");//ockert
+  }
   container.appendChild(participantContainer);
 
   let tracksContainer = document.createElement('div');
