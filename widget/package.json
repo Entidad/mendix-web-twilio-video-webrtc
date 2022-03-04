@@ -1,0 +1,33 @@
+{
+  "name": "twiliovideochat",
+  "widgetName": "TwilioVideoChat",
+  "version": "1.0.1",
+  "description": "A Mendix widget for video chats on the Twilio platform",
+  "copyright": "Objectivity 2020",
+  "author": "Sergiusz Woznicki",
+  "config": {
+    "projectPath": "../test/",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "entidad.io",
+  "scripts": {
+    "start": "concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
+    "dev": "pluggable-widgets-tools start:js",
+    "build": "pluggable-widgets-tools build:js",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^8.7.0"
+  },
+  "dependencies": {
+    "big.js": "^5.2.2",
+    "classnames": "^2.2.6",
+    "twilio": "^3.19.1",
+    "twilio-video": "^2.1.0"
+  }
+}
