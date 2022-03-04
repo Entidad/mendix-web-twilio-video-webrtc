@@ -1,7 +1,7 @@
 {
   "name": "twiliovideochat",
   "widgetName": "TwilioVideoChat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Mendix widget for video chats on the Twilio platform",
   "copyright": "Objectivity 2020",
   "author": "Sergiusz Woznicki",
