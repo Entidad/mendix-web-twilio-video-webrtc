@@ -2,33 +2,34 @@
   "name": "twiliovideochat",
   "widgetName": "TwilioVideoChat",
   "version": "1.0.3",
-  "description": "A Mendix widget for video chats on the Twilio platform",
-  "copyright": "Objectivity 2020",
-  "author": "Sergiusz Woznicki",
+  "description": "My widget description",
+  "copyright": "GNU",
+  "author": "Ockert van Schalkwyk",
+  "engines": {
+    "node": ">=12"
+  },
   "config": {
-    "projectPath": "../test/",
+    "projectPath": "/mnt/c/Users/ockert/dev/mdx/ImmigrationServices/ImmigrationServices-main/",
     "mendixHost": "http://localhost:8080",
     "developmentPort": "3000"
   },
   "packagePath": "entidad.io",
   "scripts": {
-    "start": "concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
-    "dev": "pluggable-widgets-tools start:js",
-    "build": "pluggable-widgets-tools build:js",
+    "start": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
     "lint": "pluggable-widgets-tools lint",
     "lint:fix": "pluggable-widgets-tools lint:fix",
     "prerelease": "npm run lint",
-    "release": "pluggable-widgets-tools release:js"
+    "release": "pluggable-widgets-tools release:web"
   },
-  "license": "MIT",
+  "license": "GNU",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^8.7.0"
+    "@mendix/pluggable-widgets-tools": "^9.0.0"
   },
   "dependencies": {
-    "big.js": "^5.2.2",
+    "@rollup/plugin-json": "^4.1.0",
     "classnames": "^2.2.6",
-    "node-sass": "^7.0.1",
     "twilio": "^3.19.1",
-    "twilio-video": "^2.1.0"
+    "twilio-video": "^2.21.2"
   }
 }

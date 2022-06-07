@@ -1,18 +1,6 @@
-div.twilio-video div.media {
-  max-width: 100%;
-}
+/*
+Place your custom CSS here
+*/
+.widget-hello-world {
 
-div.twilio-video div.media video {
-  max-width: 100%;
-}
-
-.media video {
-  max-width: 100%;
-}
-
-div.twilio-video div.participant-name {
-  position: relative;
-  top: -23px;
-  opacity:  70%;
-  background-color: white;
 }
