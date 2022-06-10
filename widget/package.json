@@ -1,7 +1,7 @@
 {
   "name": "twiliovideochat",
   "widgetName": "TwilioVideoChat",
-  "version": "1.0.4",
+  "version": "0.1.0",
   "description": "My widget description",
   "copyright": "GNU",
   "author": "Ockert van Schalkwyk",
