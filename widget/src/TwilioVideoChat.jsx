@@ -62,28 +62,41 @@ function roomJoined(room,identity){
 		//check is current, clear and set to last
 		//die elemente moontlik word reeds uitgehaal - inspeksie van dokument model
 		//hoef nie subelemente te verwyder nie - word reeds verwyder
+		//console.warn("-0-");
 		if(typeof(chat.participants[participant.sid])!="undefined"){
+			//console.warn("-1-");
 			if(chat.currentParticipant.sid==participant.sid){
-				//stip laaste lid
-				let p=chat.participants[Object.keys(chat.participants)[0]];
+				//console.warn("-2-");
+				//verwyder uit buffer
+				delete(chat.participants[participant.sid]);
+				//console.warn("length:"+Object.keys(chat.participants).length);
+				//stip eerste lid
 				var previewContainer=getPreviewContainer();
-				while(previewContainer.firstElementChild) {
-					previewContainer.firstElementChild.remove();
+				if(Object.keys(chat.participants).length==0){
+					//console.warn("-3-");
+					var previewContainer=getPreviewContainer();
+					while(previewContainer.firstElementChild){
+						previewContainer.firstElementChild.remove();
+					}
+					chat.showPreview();
+					chat.currentParticipant=null;
+				}else{
+					//console.warn("-4-");
+					let p=chat.participants[Object.keys(chat.participants)[0]];
+					while(previewContainer.firstElementChild){
+						previewContainer.firstElementChild.remove();
+					}
+					chat.currentParticipant=null;
+					p.tracks.forEach(function(publication){
+						trackPublished(publication,previewContainer);
+					});
+					chat.currentParticipant=p;
 				}
-				chat.currentParticipant=null;
-				p.tracks.forEach(function(publication){
-					//so the next thing is also to properly clear this container first 
-					trackPublished(publication,previewContainer);
-				});
-				chat.currentParticipant=p;
+			}else{
+				//console.warn("-5-");
+				delete(chat.participants[participant.sid]);
 			}
-			delete(chat.participants[participant.sid]);
-			console.log("Number of participants: "+Object.keys(chat.participants).length)
-			if(Object.keys(chat.participants).length==0){
-				chat.showPreview();
-				chat.currentParticipant=null;
-			}
-			//a
+		}else{
 		}
 	});
 	//Once the LocalParticipant leaves the room, detach the Tracks
