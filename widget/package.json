@@ -1,15 +1,15 @@
 {
   "name": "twiliovideochat",
   "widgetName": "TwilioVideoChat",
-  "version": "0.2.0",
+  "version": "2.0.0",
   "description": "Twilio Video Widget",
-  "copyright": "© 2021-2025 Entidad. All Rights Reserved.",
+  "copyright": "© 2021-2026 Entidad. All Rights Reserved.",
   "author": "Ockert van Schalkwyk",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "config": {
-    "projectPath": "/mnt/c/Users/ockert/dev/mdx/ImmigrationServices/ImmigrationServices-main/",
+    "projectPath": "./test/",
     "mendixHost": "http://localhost:8080",
     "developmentPort": "3000"
   },
@@ -24,12 +24,11 @@
   },
   "license": "GNU",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^10.18.2"
+    "@mendix/pluggable-widgets-tools": "^11.12.0",
+    "@rollup/plugin-json": "^6.1.0"
   },
   "dependencies": {
-    "@rollup/plugin-json": "6.1.0",
     "classnames": "^2.2.6",
-    "twilio": "5.8.0",
-    "twilio-video": "2.32.1"
+    "twilio-video": "2.35.0"
   }
 }
